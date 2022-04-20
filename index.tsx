@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
+import { JobsListComponent } from './jobs-list.component';
 import './style.css';
 
-interface AppProps { }
-interface AppState {
+type AppProps = { }
+type AppState = {
   name: string;
 }
 
@@ -19,10 +19,7 @@ class App extends Component<AppProps, AppState> {
   render() {
     return (
       <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
+        <JobsListComponent />
       </div>
     );
   }
