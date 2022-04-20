@@ -3,16 +3,16 @@ import { render } from 'react-dom';
 import { JobsListComponent } from './jobs-list.component';
 import './style.css';
 
-type AppProps = { }
+type AppProps = {};
 type AppState = {
   name: string;
-}
+};
 
 class App extends Component<AppProps, AppState> {
-  constructor(props) {
+  constructor(props: AppProps) {
     super(props);
     this.state = {
-      name: 'React'
+      name: 'React',
     };
   }
 

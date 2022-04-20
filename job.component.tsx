@@ -5,5 +5,5 @@ type PropsType = {
   job: Job;
 }
 export const JobComponent = ({ job }: PropsType) => {
-  return <h1>Hello {job}!</h1>;
+  return <h1>{job.title}</h1>;
 }
