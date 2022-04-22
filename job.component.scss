@@ -1,25 +1,29 @@
 @mixin tag-lg {
   margin-left: 1rem;
   border-radius: 10px;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
 }
 .job {
   display: flex;
-  background-color: whitesmoke;
+  padding: 0.5rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
 
   &__info {
     .company-name {
       display: inline-block;
     }
-    
+
     .new-tag {
       @include tag-lg;
-      background-color: lightgreen;
+      background-color: rgb(100, 186, 187);
     }
 
     .featured-tag {
       @include tag-lg;
-      background-color: lightblue;
+      background-color: rgb(42, 56, 56);
     }
   }
 }
