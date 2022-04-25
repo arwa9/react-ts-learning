@@ -1,29 +1,77 @@
+$dark-green: rgb(93, 165, 164);
+$light-green: rgb(100, 186, 187);
+$lightest-green: rgb(238, 247, 244);
+$dark-gray: rgb(42, 56, 56);
+$light-gray: rgb(174, 177, 176);
+
 @mixin tag-lg {
   margin-left: 1rem;
   border-radius: 10px;
   padding: 0.25rem 0.5rem;
   color: #fff;
 }
+
 .job {
   display: flex;
-  padding: 0.5rem 2rem;
-  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  margin: 1rem 2rem;
   border-radius: 5px;
   background-color: #fff;
+  box-shadow: 0 5px 10px rgba($color: $dark-gray, $alpha: 0.2);
+
+  &.featured {
+    border-left: 4px solid $dark-green;
+  }
 
   &__info {
+    flex-grow: 1;
+    
+    h3,
+    h5 {
+      margin: 0.5rem 0;
+    }
+
+    span {
+      font-size: 12px;
+    }
+
     .company-name {
       display: inline-block;
+      color: $dark-green;
     }
 
     .new-tag {
       @include tag-lg;
-      background-color: rgb(100, 186, 187);
+      background-color: $light-green;
     }
 
     .featured-tag {
       @include tag-lg;
-      background-color: rgb(42, 56, 56);
+      background-color: $dark-gray;
+    }
+
+    .details {
+      color: $light-gray;
+      text-transform: capitalize;
+
+      span:not(:first-child) {
+        display: list-item inline;
+        list-style-type: disc;
+        list-style-position: inside;
+        margin: 0 0.4em;
+      }
+    }
+  }
+
+  &__tags {
+    align-self: center;
+    .job-tag {
+      background-color: $lightest-green;
+      color: $dark-green;
+      border-radius: 2px;
+      padding: 5px;
+      margin: 0 .5em;
+      font-size: 10px;
     }
   }
 }

@@ -6,6 +6,7 @@ export interface Job {
   date: Date;
   contractType: ContractTypes;
   location: string;
+  featured: boolean;
   tags: string[];
 }
 

@@ -4,9 +4,10 @@ export const JOBS_LIST = [
     company: {
       name: 'PhotoSnap',
     },
-    date: '2022-04-21T18:25:43.511Z',
+    date: '2022-04-25T18:25:43.511Z',
     contractType: 'full time',
     location: 'USA Only',
+    featured: true,
     tags: ['Frontend', 'Senior', 'HTML', 'CSS', 'Javascript'],
   },
   {
@@ -17,6 +18,7 @@ export const JOBS_LIST = [
     date: '2022-04-17T18:25:43.511Z',
     contractType: 'part time',
     location: 'Remote',
+    featured: false,
     tags: ['Fullstack', 'Midweight', 'Python', 'React'],
   },
 ];

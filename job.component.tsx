@@ -14,25 +14,28 @@ const getDaysDiff = (date: Date | string): number => {
 };
 
 export const JobComponent = ({ job }: PropsType) => {
+  const diffDays: number = getDaysDiff(job.date);
+
   return (
-    <div className="job">
+    <div className={`job ${job.featured ? 'featured' : ''}`}>
       <div className="job__img-container">
         <img />
       </div>
       <div className="job__info">
         <h5 className="company-name">{job.company.name}</h5>
-        {getDaysDiff(job.date) <= 2 && <span className="new-tag">NEW</span>}
-        <span className="featured-tag">FEATURED</span>
+        {(diffDays <= 2) && <span className="new-tag">NEW!</span>}
+        {job.featured && <span className="featured-tag">FEATURED</span>}
         <br />
         <h3 className="title">{job.title}</h3>
-        <span className="details">
-          {getDaysDiff(job.date)} days ago &nbsp;·&nbsp;
-          {job.contractType}
-          &nbsp;·&nbsp;
-          {job.location}
-        </span>
+        <div className="details">
+          <span>{diffDays}d ago</span>
+          <span>{job.contractType}</span>
+          <span>{job.location}</span>
+        </div>
       </div>
-      <div className="job__tags"></div>
+      <div className="job__tags">
+        {job.tags.map(tag => <span className="job-tag">{tag}</span>)}
+      </div>
     </div>
   );
 };
