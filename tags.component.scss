@@ -1,0 +1,15 @@
+@import 'mixins.scss';
+
+.tags-list {
+  display: flex;
+
+  .tag {
+    @include tag-sm;
+    border: 1px solid $dark-green;
+
+    .remove-btn {
+      color: $dark-gray;
+      margin-left: .5em;
+    }
+  }
+}

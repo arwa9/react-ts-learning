@@ -4,6 +4,7 @@ import './job.component.scss';
 
 type PropsType = {
   job: Job;
+  applyTagFilter: any;
 };
 
 const getDaysDiff = (date: Date | string): number => {
@@ -13,7 +14,7 @@ const getDaysDiff = (date: Date | string): number => {
   );
 };
 
-export const JobComponent = ({ job }: PropsType) => {
+export const JobComponent = ({ job, applyTagFilter }: PropsType) => {
   const diffDays: number = getDaysDiff(job.date);
 
   return (
@@ -23,7 +24,7 @@ export const JobComponent = ({ job }: PropsType) => {
       </div>
       <div className="job__info">
         <h5 className="company-name">{job.company.name}</h5>
-        {(diffDays <= 2) && <span className="new-tag">NEW!</span>}
+        {diffDays <= 2 && <span className="new-tag">NEW!</span>}
         {job.featured && <span className="featured-tag">FEATURED</span>}
         <br />
         <h3 className="title">{job.title}</h3>
@@ -34,7 +35,11 @@ export const JobComponent = ({ job }: PropsType) => {
         </div>
       </div>
       <div className="job__tags">
-        {job.tags.map(tag => <span className="job-tag">{tag}</span>)}
+        {job.tags.map((tag) => (
+          <button className="job-tag" onClick={() => applyTagFilter(tag)}>
+            {tag}
+          </button>
+        ))}
       </div>
     </div>
   );
